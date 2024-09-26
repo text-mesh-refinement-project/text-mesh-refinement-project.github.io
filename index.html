@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="Text-guided Controllable Mesh Refinement for Interactive 3D Modeling">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Text-guided Controllable Mesh Refinement for Interactive 3D Modeling</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/video_comparison.js" defer></script>
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>">
+
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+
+            <h1 class="title is-1 publication-title">Text-guided Controllable Mesh Refinement for Interactive 3D Modeling</h1>
+            <div class="is-size-5 publication-authors">
+
+              <span class="author-block">
+                <a href="https://yunchunchen.github.io/">Yun-Chun Chen</a><sup>1,2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://iszihan.github.io/">Selena Ling</a><sup>1,2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://czq142857.github.io/">Zhiqin Chen</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.vovakim.com/">Vladimir G. Kim</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="http://mgadelha.me/">Matheus Gadelha</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.cs.toronto.edu/~jacobson/">Alec Jacobson</a><sup>1,2</sup>
+              </span>
+
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>University of Toronto</span>,
+              <span class="author-block"><sup>2</sup>Adobe Research</span>
+            </div>
+
+            <div class="is-size-5">
+              <span class="author-block">ACM SIGGRAPH Asia, 2024</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2406.01592" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+    
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section">
+    <div class="container is-max-desktop">
+        <center>
+            <img src="./static/teaser.png">
+        </center>
+        <div class="content has-text-justified">
+          <p>
+              We present a method that adds geometric details to an input (coarse) 3D mesh through text guidance. Our method can be applied to different types of input conditions. From left to right, the input mesh is an assembly of six primitive shapes, a low-poly mesh, another low-poly mesh, and a mesh initialized by silhouette carving.
+          </p>
+        </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+        <center>
+          <h2 class="title is-3">Interactive Demo</h2>
+          <br>
+        </center>
+        <center>
+          <h2 class="title is-4">Prompt: A cartoon mouse character.</h2>
+        </center>
+        <video id="teaser" width="100%" playsinline controls autoplay loop muted>
+            <source src="static/demo-mouse.mp4" type="video/mp4" />
+        </video>
+        <script>
+            document.getElementById('teaser').play();
+        </script>
+        <br>
+        <br>
+        <center>
+          <h2 class="title is-4">Prompt: A comic style magician.</h2>
+        </center>
+        <video id="teaser" width="100%" playsinline controls autoplay loop muted>
+            <source src="static/demo-magician.mp4" type="video/mp4" />
+        </video>
+        <script>
+            document.getElementById('teaser').play();
+        </script>
+        <br>
+        <br>
+        <center>
+          <h2 class="title is-4">Prompt: A standing cat.</h2>
+        </center>
+        <video id="teaser" width="100%" playsinline controls autoplay loop muted>
+            <source src="static/demo-cat.mp4" type="video/mp4" />
+        </video>
+        <script>
+            document.getElementById('teaser').play();
+        </script>
+    </div>
+  </section>
+    
+    
+  <section class="section">
+  <section class="section">
+    <div class="container is-max-desktop">
+      <center>
+          <h2 class="title is-3">Abstract</h2>
+          <br>
+      </center>
+      <div class="content has-text-justified">
+          <p>
+              We propose a novel technique for adding geometric details to an input coarse 3D mesh guided by a text prompt. Our method is composed of three stages. First, we generate a single-view RGB image conditioned on the input coarse geometry and the input text prompt. This single-view image generation step allows the user to pre-visualize the result and offers stronger conditioning for subsequent multi-view generation. Second, we use our novel multi-view normal generation architecture to jointly generate six different views of the normal images. The joint view generation reduces inconsistencies and leads to sharper details. Third, we optimize our mesh with respect to all views and generate a fine, detailed geometry as output. The resulting method produces an output within seconds and offers explicit user control over the coarse structure, pose, and desired details of the resulting 3D mesh. 
+          </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+        <center>
+            <h2 class="title is-3">Method</h2>
+            <br>
+        </center>
+        <center>
+            <img src="./static/method.png">
+        </center>
+        <div class="content has-text-justified">
+            <p>
+                <b>Method overview.</b> Our method consists of three stages: single-view generation, multi-view generation and mesh refinement/optimization. Given an input mesh and an input text prompt, we first use a large-scale pre-trained diffusion model (highlighted in red) to generate an RGB image that respects the input conditions. Next, we use a multi-view diffusion model (highlighted in blue) that takes as input the generated RGB image and the normal renderings of the input mesh and generates multi-view normals. Finally, we use the generated multi-view normals to supervise the refinement of the input mesh.
+            </p>
+        </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+        <center>
+            <h2 class="title is-3">Comparison to State of the Art</h2>
+            <br>
+        </center>
+        <center>
+            <img src="./static/result.png">
+            <br>
+        </center>
+        <div class="content has-text-justified">
+            <p>
+                <b>Qualitative results.</b> Our method generates 3D meshes that have better geometric details and visual quality compared to state-of-the-art methods.
+            </p>
+        </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+        <center>
+            <h2 class="title is-3">Controlling Pose with 3D Input</h2>
+            <br>
+        </center>
+        <center>
+            <img src="./static/pose-control.png" style="max-width: 60%;" >
+        </center>
+        <br>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+        <center>
+            <h2 class="title is-3">Mesh Texturing</h2>
+            <br>
+        </center>
+        <center>
+            <img src="./static/texturing.png" style="max-width: 60%;">
+        </center>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+                This webpage is based on the project page for <a href="https://camp-nerf.github.io">CamP</a>. 
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+      
+</body>
+
+</html>
